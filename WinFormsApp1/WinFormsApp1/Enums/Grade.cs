@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WinFormsApp1.Enums
+﻿namespace WinFormsApp1.Enums
 {
-    internal class Grade
+    public enum Grade
     {
+        Unsatisfactory = 2,
+        Satisfactory = 3,
+        Good = 4,
+        Excellent = 5
     }
 }

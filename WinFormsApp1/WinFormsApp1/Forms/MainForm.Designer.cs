@@ -59,20 +59,20 @@
             // Faculties
             // 
             Faculties.Name = "Faculties";
-            Faculties.Size = new Size(359, 44);
+            Faculties.Size = new Size(289, 44);
             Faculties.Text = "Факультеты";
             Faculties.Click += Faculties_Click;
             // 
             // дисциплиныToolStripMenuItem
             // 
             дисциплиныToolStripMenuItem.Name = "дисциплиныToolStripMenuItem";
-            дисциплиныToolStripMenuItem.Size = new Size(359, 44);
+            дисциплиныToolStripMenuItem.Size = new Size(289, 44);
             дисциплиныToolStripMenuItem.Text = "Дисциплины";
             // 
             // Groups
             // 
             Groups.Name = "Groups";
-            Groups.Size = new Size(359, 44);
+            Groups.Size = new Size(289, 44);
             Groups.Text = "Группы";
             // 
             // Operations
@@ -87,12 +87,14 @@
             Students.Name = "Students";
             Students.Size = new Size(359, 44);
             Students.Text = "Студенты";
+            Students.Click += Students_Click;
             // 
             // SessionResult
             // 
             SessionResult.Name = "SessionResult";
             SessionResult.Size = new Size(359, 44);
             SessionResult.Text = "Результаты Сессии";
+            SessionResult.Click += SessionResult_Click;
             // 
             // MainForm
             // 

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WinFormsApp1.Models
+﻿namespace WinFormsApp1.Models
 {
-    internal class ExamResultDto
+    public class ExamResultDto
     {
+        public string StudentName { get; set; } = string.Empty;
+        public string DisciplineName { get; set; } = string.Empty;
+        public string GradeText { get; set; } = string.Empty;
     }
 }
