@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using WinFormsApp1.Models;
 
 namespace WinFormsApp1.Repositories.Interfaces
 {
-    internal class IFacultyRepository
+    public interface IFacultyRepository
     {
+        IEnumerable<Faculty> GetAll();
+        Faculty GetById(int id);
+        void Add(Faculty faculty);
+        void Update(Faculty faculty);
+        void Delete(int id);
     }
 }

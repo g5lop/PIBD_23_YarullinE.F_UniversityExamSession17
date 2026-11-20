@@ -1,10 +1,10 @@
-using Autofac;
-using SessionAccountingApp.Forms; // Не забудь создать эту папку для форм!
-using SessionAccountingApp.Infrastructure;
 using System;
 using System.Windows.Forms;
+using Autofac;
+using WinFormsApp1.Forms;
+using WinFormsApp1.Infrastructure;
 
-namespace SessionAccountingApp
+namespace WinFormsApp1
 {
     internal static class Program
     {
@@ -14,12 +14,10 @@ namespace SessionAccountingApp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Собираем контейнер
             var container = ContainerConfig.Configure();
 
             using (var scope = container.BeginLifetimeScope())
             {
-                // Получаем главную форму
                 var mainForm = scope.Resolve<MainForm>();
                 Application.Run(mainForm);
             }
