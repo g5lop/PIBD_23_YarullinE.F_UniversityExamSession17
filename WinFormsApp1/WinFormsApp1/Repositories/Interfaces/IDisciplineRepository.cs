@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using WinFormsApp1.Models;
 
 namespace WinFormsApp1.Repositories.Interfaces
 {
-    internal class IDisciplineRepository
+    public interface IDisciplineRepository
     {
+        IEnumerable<Discipline> GetAll();
+        void Add(Discipline discipline);
+        void Update(Discipline discipline);
+        void Delete(int id);
     }
 }

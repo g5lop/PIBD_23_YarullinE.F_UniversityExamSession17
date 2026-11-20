@@ -12,7 +12,7 @@ namespace WinFormsApp1.Repositories.Stubs
 
         public IEnumerable<Faculty> GetAll() => _faculties;
 
-        public Faculty GetById(int id) => _faculties.FirstOrDefault(f => f.Id == id);
+        public Faculty GetById(int id) => _faculties.FirstOrDefault(f => f.Id == id)!;
 
         public void Add(Faculty faculty)
         {

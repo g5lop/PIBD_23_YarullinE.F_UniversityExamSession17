@@ -9,8 +9,8 @@ namespace WinFormsApp1.Enums
     public class StudentStatus
     {
         public int Id { get; set; }
-        public string FullName { get; set; }
-        public string IsMarried { get; set; }
+        public string ?FullName { get; set; }
+        public string ?IsMarried { get; set; }
         public int In_Dormitory { get; set; }
         public decimal Average_Score { get; set; }
         public decimal Scholaship_amount { get; set; }
