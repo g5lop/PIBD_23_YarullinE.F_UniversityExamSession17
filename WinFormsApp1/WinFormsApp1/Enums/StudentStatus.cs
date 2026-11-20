@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WinFormsApp1.Entities.Enum
+namespace WinFormsApp1.Enums
 {
-    public class Students
+    public class StudentStatus
     {
         public int Id { get; set; }
         public string FullName { get; set; }

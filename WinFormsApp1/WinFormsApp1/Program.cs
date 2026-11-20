@@ -1,17 +1,28 @@
-namespace WinFormsApp1
+using Autofac;
+using SessionAccountingApp.Forms; // Не забудь создать эту папку для форм!
+using SessionAccountingApp.Infrastructure;
+using System;
+using System.Windows.Forms;
+
+namespace SessionAccountingApp
 {
     internal static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
+            // Собираем контейнер
+            var container = ContainerConfig.Configure();
+
+            using (var scope = container.BeginLifetimeScope())
+            {
+                // Получаем главную форму
+                var mainForm = scope.Resolve<MainForm>();
+                Application.Run(mainForm);
+            }
         }
     }
 }
