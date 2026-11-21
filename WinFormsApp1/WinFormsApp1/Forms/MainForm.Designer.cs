@@ -45,7 +45,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { Directory, Operations });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1288, 42);
+            menuStrip1.Size = new Size(1288, 40);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -53,7 +53,7 @@
             // 
             Directory.DropDownItems.AddRange(new ToolStripItem[] { Faculties, дисциплиныToolStripMenuItem, Groups });
             Directory.Name = "Directory";
-            Directory.Size = new Size(191, 38);
+            Directory.Size = new Size(191, 36);
             Directory.Text = "Справочники ";
             // 
             // Faculties
@@ -79,20 +79,20 @@
             // 
             Operations.DropDownItems.AddRange(new ToolStripItem[] { Students, SessionResult });
             Operations.Name = "Operations";
-            Operations.Size = new Size(147, 38);
+            Operations.Size = new Size(147, 36);
             Operations.Text = "Операции";
             // 
             // Students
             // 
             Students.Name = "Students";
-            Students.Size = new Size(359, 44);
+            Students.Size = new Size(355, 44);
             Students.Text = "Студенты";
             Students.Click += Students_Click;
             // 
             // SessionResult
             // 
             SessionResult.Name = "SessionResult";
-            SessionResult.Size = new Size(359, 44);
+            SessionResult.Size = new Size(355, 44);
             SessionResult.Text = "Результаты Сессии";
             SessionResult.Click += SessionResult_Click;
             // 
@@ -100,6 +100,8 @@
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources._8efc41d5a3d6f09cdffe682158ff7469;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1288, 821);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
