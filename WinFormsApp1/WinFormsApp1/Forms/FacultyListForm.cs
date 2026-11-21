@@ -52,6 +52,10 @@ namespace WinFormsApp1.Forms
                 _repository.Delete(selected.Id);
                 LoadData();
             }
+            else
+            {
+                MessageBox.Show("Выберите строку для удаления!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

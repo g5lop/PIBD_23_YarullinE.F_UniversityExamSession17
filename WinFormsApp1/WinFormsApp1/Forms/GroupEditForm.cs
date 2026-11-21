@@ -9,10 +9,7 @@ namespace WinFormsApp1.Forms
     {
         private IStudentGroupRepository? _repository;
 
-        public GroupEditForm()
-        {
-            InitializeComponent();
-        }
+        public GroupEditForm() { InitializeComponent(); }
 
         public GroupEditForm(IStudentGroupRepository repository) : this()
         {
@@ -23,12 +20,6 @@ namespace WinFormsApp1.Forms
         {
             if (_repository == null) return;
 
-            if (string.IsNullOrWhiteSpace(txtGroupNumber.Text))
-            {
-                MessageBox.Show("Введите номер группы!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
             try
             {
                 var group = StudentGroup.Create(0, txtGroupNumber.Text.Trim());
@@ -36,9 +27,13 @@ namespace WinFormsApp1.Forms
                 DialogResult = DialogResult.OK;
                 Close();
             }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Системная ошибка: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

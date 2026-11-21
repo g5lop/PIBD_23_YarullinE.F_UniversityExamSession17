@@ -9,10 +9,7 @@ namespace WinFormsApp1.Forms
     {
         private IFacultyRepository? _repository;
 
-        public FacultyEditForm()
-        {
-            InitializeComponent();
-        }
+        public FacultyEditForm() { InitializeComponent(); }
 
         public FacultyEditForm(IFacultyRepository repository) : this()
         {
@@ -23,12 +20,6 @@ namespace WinFormsApp1.Forms
         {
             if (_repository == null) return;
 
-            if (string.IsNullOrWhiteSpace(txtName.Text))
-            {
-                MessageBox.Show("Введите название факультета!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
             try
             {
                 var faculty = Faculty.Create(0, txtName.Text.Trim());
@@ -36,9 +27,13 @@ namespace WinFormsApp1.Forms
                 DialogResult = DialogResult.OK;
                 Close();
             }
-            catch (Exception ex)
+            catch (ArgumentException ex) 
             {
-                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show($"Системная ошибка: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

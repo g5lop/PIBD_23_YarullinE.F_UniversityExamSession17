@@ -16,7 +16,6 @@ namespace WinFormsApp1.Infrastructure
             builder.RegisterType<DisciplineRepositoryStub>().As<IDisciplineRepository>().SingleInstance();
             builder.RegisterType<StudentGroupRepositoryStub>().As<IStudentGroupRepository>().SingleInstance();
 
-
             builder.RegisterType<StudentRepositoryStub>().As<IStudentRepository>().SingleInstance();
             builder.RegisterType<StudentListForm>().AsSelf();
             builder.RegisterType<StudentEditForm>().AsSelf();

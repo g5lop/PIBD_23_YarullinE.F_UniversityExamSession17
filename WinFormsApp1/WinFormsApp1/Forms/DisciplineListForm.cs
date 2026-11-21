@@ -38,7 +38,10 @@ namespace WinFormsApp1.Forms
             if (_container != null)
             {
                 var form = _container.Resolve<DisciplineEditForm>();
-                if (form.ShowDialog() == DialogResult.OK) LoadData();
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    LoadData();
+                }
             }
         }
 
@@ -48,6 +51,10 @@ namespace WinFormsApp1.Forms
             {
                 _repository.Delete(selected.Id);
                 LoadData();
+            }
+            else
+            {
+                MessageBox.Show("Выберите строку для удаления!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

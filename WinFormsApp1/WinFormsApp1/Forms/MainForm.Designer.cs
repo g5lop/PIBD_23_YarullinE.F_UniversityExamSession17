@@ -31,7 +31,7 @@
             menuStrip1 = new MenuStrip();
             Directory = new ToolStripMenuItem();
             Faculties = new ToolStripMenuItem();
-            дисциплиныToolStripMenuItem = new ToolStripMenuItem();
+            disciplines = new ToolStripMenuItem();
             Groups = new ToolStripMenuItem();
             Operations = new ToolStripMenuItem();
             Students = new ToolStripMenuItem();
@@ -45,41 +45,43 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { Directory, Operations });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1288, 40);
+            menuStrip1.Size = new Size(1288, 42);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
             // Directory
             // 
-            Directory.DropDownItems.AddRange(new ToolStripItem[] { Faculties, дисциплиныToolStripMenuItem, Groups });
+            Directory.DropDownItems.AddRange(new ToolStripItem[] { Faculties, disciplines, Groups });
             Directory.Name = "Directory";
-            Directory.Size = new Size(191, 36);
+            Directory.Size = new Size(191, 38);
             Directory.Text = "Справочники ";
             // 
             // Faculties
             // 
             Faculties.Name = "Faculties";
-            Faculties.Size = new Size(289, 44);
+            Faculties.Size = new Size(359, 44);
             Faculties.Text = "Факультеты";
             Faculties.Click += Faculties_Click;
             // 
-            // дисциплиныToolStripMenuItem
+            // disciplines
             // 
-            дисциплиныToolStripMenuItem.Name = "дисциплиныToolStripMenuItem";
-            дисциплиныToolStripMenuItem.Size = new Size(289, 44);
-            дисциплиныToolStripMenuItem.Text = "Дисциплины";
+            disciplines.Name = "disciplines";
+            disciplines.Size = new Size(359, 44);
+            disciplines.Text = "Дисциплины";
+            disciplines.Click += disciplinesClick;
             // 
             // Groups
             // 
             Groups.Name = "Groups";
-            Groups.Size = new Size(289, 44);
+            Groups.Size = new Size(359, 44);
             Groups.Text = "Группы";
+            Groups.Click += Groups_Click_1;
             // 
             // Operations
             // 
             Operations.DropDownItems.AddRange(new ToolStripItem[] { Students, SessionResult });
             Operations.Name = "Operations";
-            Operations.Size = new Size(147, 36);
+            Operations.Size = new Size(147, 38);
             Operations.Text = "Операции";
             // 
             // Students
@@ -118,7 +120,7 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem Directory;
         private ToolStripMenuItem Faculties;
-        private ToolStripMenuItem дисциплиныToolStripMenuItem;
+        private ToolStripMenuItem disciplines;
         private ToolStripMenuItem Groups;
         private ToolStripMenuItem Operations;
         private ToolStripMenuItem Students;

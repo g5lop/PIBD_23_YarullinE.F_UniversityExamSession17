@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using WinFormsApp1.Enums;
 using WinFormsApp1.Models;
@@ -40,7 +41,7 @@ namespace WinFormsApp1.Forms
         {
             if (_repository == null || cmbStudent.SelectedValue == null || cmbDiscipline.SelectedValue == null)
             {
-                MessageBox.Show("Заполните все поля!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Убедитесь, что в базе есть студенты и дисциплины, и вы выбрали их из списков!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -56,9 +57,13 @@ namespace WinFormsApp1.Forms
                 DialogResult = DialogResult.OK;
                 Close();
             }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Системная ошибка: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

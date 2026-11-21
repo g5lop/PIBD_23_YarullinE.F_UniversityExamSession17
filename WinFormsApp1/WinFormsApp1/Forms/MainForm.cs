@@ -63,5 +63,25 @@ namespace WinFormsApp1.Forms
                 form.ShowDialog();
             }
         }
+
+        private void disciplinesClick(object sender, EventArgs e)
+        {
+            if (_container != null)
+            {
+                var form = _container.Resolve<DisciplineListForm>();
+                form.ShowDialog();
+            }
+            
+        }
+
+        private void Groups_Click_1(object sender, EventArgs e)
+        {
+            if (_container != null)
+            {
+                var form = _container.Resolve<GroupListForm>();
+                form.ShowDialog();
+            }
+            
+        }
     }
 }
