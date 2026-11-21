@@ -18,7 +18,6 @@ namespace WinFormsApp1.Forms
             _container = container;
         }
 
-        // Обработчик для Факультетов
         private void Faculties_Click(object sender, EventArgs e)
         {
             if (_container != null)
@@ -28,7 +27,6 @@ namespace WinFormsApp1.Forms
             }
         }
 
-        // Обработчик для Дисциплин
         private void Disciplines_Click(object sender, EventArgs e)
         {
             if (_container != null)
@@ -38,7 +36,6 @@ namespace WinFormsApp1.Forms
             }
         }
 
-        // Обработчик для Групп
         private void Groups_Click(object sender, EventArgs e)
         {
             if (_container != null)

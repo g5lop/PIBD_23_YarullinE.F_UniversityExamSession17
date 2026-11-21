@@ -6,7 +6,7 @@ namespace WinFormsApp1.Repositories.Interfaces
     public interface IExamResultRepository
     {
         IEnumerable<ExamResult> GetAll();
-        IEnumerable<ExamResultDto> GetAllForDisplay(); // Метод для красивой таблицы
+        IEnumerable<ExamResultDto> GetAllForDisplay(); 
         void Add(ExamResult result);
     }
 }

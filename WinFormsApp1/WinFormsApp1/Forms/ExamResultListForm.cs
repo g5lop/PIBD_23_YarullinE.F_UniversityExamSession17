@@ -24,7 +24,6 @@ namespace WinFormsApp1.Forms
             if (_repository != null)
             {
                 dataGridViewResults.DataSource = null;
-                // Выводим красивые данные (ФИО + Предмет + Оценка), а не ID
                 dataGridViewResults.DataSource = _repository.GetAllForDisplay().ToList();
             }
         }

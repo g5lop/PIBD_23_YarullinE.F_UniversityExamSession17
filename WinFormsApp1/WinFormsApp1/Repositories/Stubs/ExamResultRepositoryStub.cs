@@ -31,7 +31,6 @@ namespace WinFormsApp1.Repositories.Stubs
             var students = _studentRepo.GetAll().ToList();
             var disciplines = _disciplineRepo.GetAll().ToList();
 
-            // LINQ Join (связь М:Н)
             return from res in _results
                    join st in students on res.StudentId equals st.Id
                    join disc in disciplines on res.DisciplineId equals disc.Id

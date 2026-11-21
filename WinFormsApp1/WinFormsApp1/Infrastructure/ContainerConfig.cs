@@ -12,7 +12,6 @@ namespace WinFormsApp1.Infrastructure
         {
             var builder = new ContainerBuilder();
 
-            // 1. Репозитории (заглушки)
             builder.RegisterType<FacultyRepositoryStub>().As<IFacultyRepository>().SingleInstance();
             builder.RegisterType<DisciplineRepositoryStub>().As<IDisciplineRepository>().SingleInstance();
             builder.RegisterType<StudentGroupRepositoryStub>().As<IStudentGroupRepository>().SingleInstance();
@@ -26,7 +25,6 @@ namespace WinFormsApp1.Infrastructure
             builder.RegisterType<ExamResultListForm>().AsSelf();
             builder.RegisterType<ExamResultEditForm>().AsSelf();
 
-            // 2. Формы
             builder.RegisterType<MainForm>().AsSelf();
             builder.RegisterType<FacultyListForm>().AsSelf();
             builder.RegisterType<FacultyEditForm>().AsSelf();

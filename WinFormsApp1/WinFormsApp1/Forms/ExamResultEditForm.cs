@@ -25,17 +25,14 @@ namespace WinFormsApp1.Forms
 
         private void LoadData()
         {
-            // Загружаем студентов
             cmbStudent.DataSource = _studentRepo?.GetAll().ToList();
             cmbStudent.DisplayMember = "FullName";
             cmbStudent.ValueMember = "Id";
 
-            // Загружаем дисциплины
             cmbDiscipline.DataSource = _disciplineRepo?.GetAll().ToList();
             cmbDiscipline.DisplayMember = "Name";
             cmbDiscipline.ValueMember = "Id";
 
-            // Загружаем оценки из Enum
             cmbGrade.DataSource = Enum.GetValues(typeof(Grade));
         }
 
